@@ -59,12 +59,12 @@ options = {
 
 function update() {
   if (!ticks) {
-    player = vec(G.WIDTH - 60, G.HEIGHT - 13);
+    player = vec(G.WIDTH - 70, G.HEIGHT - 13);
     floors = times(3, (i) => vec(i * 100, 80));
     jump = true;
     falling = false;
-    timer = 50;
-    buffer = 5;
+    timer = 60;
+    buffer = 10;
     v = vec();
     power = 0;
     fireflies = times(10, () => {
@@ -145,7 +145,7 @@ function update() {
 
   //reset buffer
   if (!char("a", player).isColliding.rect.purple) {
-    buffer = 5;
+    buffer = 10;
   }
 
   //collision detection
@@ -161,7 +161,7 @@ function update() {
   //reset jump and air timer
   if(player.y > 87 && timer <= 0) {
     jump = true;
-    timer = 50;
+    timer = 60;
   }
 
   //keeps player grounded and attach player to jump velocity
